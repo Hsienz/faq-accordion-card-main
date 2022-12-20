@@ -1,8 +1,9 @@
+import Card from './Card'
 const App = () => {
   return (
-    <div>
-      <p className='font-sans font-bold text-Soft_red'>Hello world!</p>
-      <p className='font-bold'>Hello world!</p>
+    <div className='flex flex-col absolute w-full h-fit min-h-full justify-center items-center 
+    bg-gradient-to-b from-Soft_violet to-Soft_blue'>
+      <Card></Card>
     </div>
   )
 }
