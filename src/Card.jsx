@@ -1,5 +1,5 @@
-import require from "./api/require";
 import { useState } from "react";
+import arrowSvg from './assets/icon-arrow-down.svg'
 const Data = (props) => {
 	const active = props.isActive;
 	return (
@@ -19,7 +19,7 @@ const Data = (props) => {
 					{props.title}
 				</span>
 				<img
-					src={require("/src/assets/icon-arrow-down.svg")}
+					src={arrowSvg}
 					alt=""
 					className={
 						"place-self-center " + (active ? "-scale-y-100" : "")
