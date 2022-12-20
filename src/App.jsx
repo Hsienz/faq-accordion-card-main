@@ -2,8 +2,8 @@ import Card from "./Card";
 const App = () => {
 	return (
 		<div
-			className="flex flex-col absolute w-full h-fit min-h-full justify-center items-center 
-    bg-gradient-to-b from-Soft_violet to-Soft_blue"
+			className="flex flex-col absolute min-w-full w-fit h-fit min-h-full justify-center items-center 
+    bg-gradient-to-b from-Soft_violet to-Soft_blue py-16 pt-48 md:p-0"
 		>
 			<Card></Card>
 			<div class="attribution">

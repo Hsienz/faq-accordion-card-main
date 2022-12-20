@@ -1,9 +1,9 @@
 import require from "./api/require";
 import { useState } from "react";
 const Data = (props) => {
-    const active = props.isActive
+	const active = props.isActive;
 	return (
-		<div>
+		<div className="py-2">
 			<button
 				className="group w-full text-left flex justify-between"
 				onClick={props.handleOnClick}
@@ -40,7 +40,7 @@ const Card = () => {
 				"You can invite up to 2 additional users on the Free plan.",
 				"There is no limit on team members for the Premium plan.",
 			],
-			handleOnClick: () => setActive(0),
+			handleOnClick: () => setActive(active == 0 ? -1 : 0),
 			isActive: active === 0,
 		},
 
@@ -49,7 +49,7 @@ const Card = () => {
 			description: [
 				"No more than 2GB. All files in your account must fit your allotted storage space.",
 			],
-			handleOnClick: () => setActive(1),
+			handleOnClick: () => setActive(active == 1 ? -1 : 1),
 			isActive: active === 1,
 		},
 
@@ -59,7 +59,7 @@ const Card = () => {
 				"Click “Forgot password” from the login page or “Change password” from your profile page.",
 				"A reset link will be emailed to you.",
 			],
-			handleOnClick: () => setActive(2),
+			handleOnClick: () => setActive(active == 2 ? -1 : 2),
 			isActive: active === 2,
 		},
 
@@ -68,7 +68,7 @@ const Card = () => {
 			description: [
 				"Yes! Send us a message and we’ll process your request no questions asked.",
 			],
-			handleOnClick: () => setActive(3),
+			handleOnClick: () => setActive(active == 3 ? -1 : 3),
 			isActive: active === 3,
 		},
 
@@ -77,13 +77,20 @@ const Card = () => {
 			description: [
 				"Chat and email support is available 24/7. Phone lines are open during normal business hours.",
 			],
-			handleOnClick: () => setActive(4),
+			handleOnClick: () => setActive(active == 4 ? -1 : 4),
 			isActive: active === 4,
 		},
 	];
 	return (
-		<div className="w-[1000px] h-[520px] bg-[white] rounded-3xl flex">
-			<div className="w-[50%] h-full relative">
+		<div className="w-[420px] h-[800px] md:w-[1000px] md:h-[520px] bg-[white] rounded-3xl flex flex-col items-center md:flex-row ">
+			<div className="md:hidden w-4/5 h-full bottom-44 relative">
+				<div className="
+                bg-[url('/src/assets/illustration-woman-online-mobile.svg')] w-full h-full bg-no-repeat bg-center relative bg-contain
+                before:content-[''] before:bg-[url('/src/assets/bg-pattern-mobile.svg')] before:relative before:block 
+                before:w-full before:h-full before:bg-no-repeat before:bg-center before:top-32 before:bg-contain
+                " />
+			</div>
+			<div className="w-[50%] h-full relative hidden md:block">
 				<div className="w-full h-full overflow-hidden absolute">
 					<div
 						className="
@@ -95,11 +102,12 @@ const Card = () => {
 				</div>
 				<div className="w-full h-full content-[''] bg-[url('/src/assets/illustration-box-desktop.svg')] absolute bg-no-repeat top-48 right-32" />
 			</div>
-			<div className="w-[60%] h-full flex flex-col p-16 justify-between box-border text-[12px] font-sans text-Very_dark_grayish_blue">
-				<h1 className="text-4xl text-Very_dark_desaturated_blue font-bold">
+			<div className="w-full md:w-[60%] h-full flex flex-col p-16  
+            text-[12px] font-sans text-Very_dark_grayish_blue relative bottom-24 md:bottom-0">
+				<h1 className="text-4xl text-Very_dark_desaturated_blue font-bold text-center md:text-left relative">
 					FAQ
 				</h1>
-				<div className="h-4/5 flex flex-col justify-between">
+				<div className="h-[350px] flex flex-col relative md:h-full top-8">
 					{data.map((x) => (
 						<Data {...x}></Data>
 					))}
